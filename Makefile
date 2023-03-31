@@ -10,6 +10,7 @@ ansible: ## Run Ansible install playbook to setup Mac
 
 # Git hooks
 init-hooks: ## Init Git hooks
+	@poetry install
 	@poetry run pre-commit install
 
 update-hooks:
