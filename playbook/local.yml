@@ -1,0 +1,7 @@
+---
+
+- name: Run Ansible playbook on localhost
+  connection: local
+  hosts: localhost
+  roles:
+    - "{{ target_role }}"

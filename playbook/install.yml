@@ -1,0 +1,35 @@
+---
+- name: Install Git, iTerm2, and Minikube
+  hosts: local
+  gather_facts: no
+  vars:
+    brew_packages:
+      - azure-cli
+      - direnv
+      - docker
+      - fluxctl
+      - git
+      - istioctl
+      - kubectx
+      - midnight-commander
+      - minikube
+      - python@3.11
+      - tree
+      - zsh-completions
+    brew_casks:
+      - calibre
+      - iterm2
+      - visual-studio-code
+      - github
+  tasks:
+    - community.general.homebrew:
+        update_homebrew: true
+        upgrade_all: true
+    - name: Install packages via brew
+      loop: "{{ brew_packages }}"
+      community.general.homebrew:
+        name: "{{ item }}"
+    - name: Install casks via brew
+      loop: "{{ brew_casks }}"
+      community.general.homebrew_cask:
+        name: "{{ item }}"
