@@ -29,7 +29,9 @@
       loop: "{{ brew_packages }}"
       community.general.homebrew:
         name: "{{ item }}"
+      tags: brew_packages
     - name: Install casks via brew
       loop: "{{ brew_casks }}"
       community.general.homebrew_cask:
         name: "{{ item }}"
+      tags: brew_casks
