@@ -10,7 +10,8 @@
 
 # Introduction
 
-This repository contain an automated procedure to jumpstart installation and configuration of my Mac OS.
+This repository contain an automated procedure to jump-start installation and configuration of Mac OS.
+The procedure assume Ansible is going to be used to keep configuration in sync.
 
 ## Important
 
@@ -25,7 +26,7 @@ This procedure was tested on Mac OS Apply M2:
 ## Initial setup
 
 1. Make sure you have installed `homebrew` on your Mac. Detailed instructions to be found [here](https://brew.sh)
-2. Install git and ansible via `brew install ansible direnv`
+2. Install required tools via `brew install ansible direnv`
 3. Make sure your Git `user` and `email` are set.
 
         git config --global user.name FirstName LastName
@@ -72,4 +73,3 @@ Restart Docker:
 # Some useful links
 
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
-"insecure-registries": ["localhost:5000"]
