@@ -1,0 +1,27 @@
+---
+
+- name: Install dev tools via formula
+  vars:
+    formula:
+      - asdf
+      - bash
+      - direnv
+      - git
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-dev-tools
+
+- name: Install dev tools via casks
+  vars:
+    cask:
+      - anaconda
+      - github
+      - iterm2
+      - keka # file compressor, multiple formats
+  loop: "{{ cask }}"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  tags:
+    - install-dev-tools

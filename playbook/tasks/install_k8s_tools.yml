@@ -1,0 +1,14 @@
+---
+
+- name: Install K8S tools
+  vars:
+    formula:
+      - fluxctl
+      - istioctl
+      - kubectx
+      - minikube
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-k8s-tools

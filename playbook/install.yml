@@ -1,66 +1,16 @@
 ---
-- name: Install Git, iTerm2, and Minikube
+- name: Bootstrap Mac OS
   hosts: local
   gather_facts: no
-  vars:
-    brew_packages:
-      - azure-cli
-      - midnight-commander
-      - tree
-      - zsh-completions
-    brew_dev_tools:
-      - asdf
-      - bash
-      - direnv
-      - git
-      - github
-      - keka # file compressor, multiple formats
-    k8s_packages:
-      - fluxctl
-      - istioctl
-      - kubectx
-      - minikube
-    brew_casks:
-      - anaconda
-      - calibre
-      - iterm2
-      - github
-    microsoft_casks:
-      - visual-studio-code
-      - microsoft-auto-update
-      - microsoft-teams
-      - microsoft-edge
   tasks:
     - community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
+      tags:
+       - update-brew
 
-    - name: Install packages via brew
-      loop: "{{ brew_packages }}"
-      community.general.homebrew:
-        name: "{{ item }}"
-      tags: brew_packages
-
-    - name: Install dev tools via brew
-      loop: "{{ brew_dev_tools }}"
-      community.general.homebrew:
-        name: "{{ item }}"
-      tags: brew_packages
-
-    - name: Install casks via brew
-      loop: "{{ brew_casks }}"
-      community.general.homebrew_cask:
-        name: "{{ item }}"
-      tags: brew_casks
-
-    - name: Install K8S tools
-      loop: "{{ k8s_packages }}"
-      community.general.homebrew:
-        name: "{{ item }}"
-      tags: k8s_packages
-
-    - name: Install Microsoft tools
-      loop: "{{ microsoft_casks }}"
-      community.general.homebrew_cask:
-        name: "{{ item }}"
-      tags: microsoft_casks
+    - import_tasks: tasks/install_default.yml
+    - import_tasks: tasks/install_dev_tools.yml
+    - import_tasks: tasks/install_extra.yml
+    - import_tasks: tasks/install_k8s_tools.yml
+    - import_tasks: tasks/install_microsoft.yml

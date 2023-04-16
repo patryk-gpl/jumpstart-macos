@@ -1,0 +1,24 @@
+---
+
+- name: Install Microsoft tools via formula
+  vars:
+    formula:
+      - azure-cli
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-microsoft-tools
+
+- name: Install Microsoft tools via casks
+  vars:
+    cask:
+      - visual-studio-code
+      - microsoft-auto-update
+      - microsoft-teams
+      - microsoft-edge
+  loop: "{{ cask }}"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  tags:
+    - install-microsoft-tools
