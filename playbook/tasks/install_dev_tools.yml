@@ -1,9 +1,9 @@
+
 ---
 
 - name: Install dev tools via formula
   vars:
     formula:
-      - asdf
       - bash
       - direnv
       - git
