@@ -1,13 +1,23 @@
 ---
 - name: Bootstrap Mac OS
   hosts: local
-  gather_facts: no
   tasks:
     - community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
       tags:
-       - update-brew
+        - update-brew
+
+    - name: Install tools via ASDF manager
+      import_tasks: tasks/install_asdf.yml
+      vars:
+        asdf_tools:
+        - plugin: nodejs
+          version: "18.15.0"
+        - plugin: python
+          version: "3.11.3"
+      tags:
+        - install-asdf
 
     - import_tasks: tasks/install_default.yml
     - import_tasks: tasks/install_dev_tools.yml

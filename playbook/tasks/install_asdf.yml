@@ -1,0 +1,37 @@
+---
+
+- name: Install asdf tool via formula
+  vars:
+    formula:
+      - asdf
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-dev-tools
+
+- name: Install asdf plugins
+  vars:
+    plugins:
+      - nodejs
+      - python
+  shell: >
+    bash -c '
+      for plugin in {{ plugins | join(" ") }}; do
+        if ! asdf plugin list | grep -qE "^$plugin"; then
+          asdf plugin add $plugin;
+        fi;
+      done
+    '
+
+- name: Install tools managed by asdf plugins
+  command: "asdf install {{ item.plugin }} {{ item.version }}"
+  register: asdf_install_result
+  changed_when: asdf_install_result.rc == 1
+  loop: "{{ asdf_tools }}"
+
+- name: Set tools as global
+  command: "asdf global {{ item.plugin }} {{ item.version }}"
+  register: asdf_global_result
+  changed_when: asdf_global_result.rc == 1
+  loop: "{{ asdf_tools }}"
