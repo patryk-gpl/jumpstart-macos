@@ -7,6 +7,7 @@
   - [Ansible](#ansible)
     - [Cheat sheet](#cheat-sheet)
   - [Minikube](#minikube)
+- [Known issues](#known-issues)
 - [Resources, links](#resources-links)
   - [Ansible](#ansible-1)
   - [Dev Tools](#dev-tools)
@@ -75,6 +76,10 @@ Restart Docker:
     sudo killall Docker && open /Applications/Docker.app
 
 - Minikube [documentation](https://minikube.sigs.k8s.io/docs/)
+
+# Known issues
+
+- Ansible requirements.txt needed with list of collections in order to work properly with Ansible linter running on Github Actions runner, [see ansible-lint-action Issue-99](https://github.com/ansible/ansible-lint-action/issues/99)
 
 # Resources, links
 
