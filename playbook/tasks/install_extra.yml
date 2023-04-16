@@ -1,0 +1,11 @@
+---
+
+- name: Install extra tools via cask
+  vars:
+    cask:
+      - calibre
+  loop: "{{ cask }}"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  tags:
+    - install-extra-tools

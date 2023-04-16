@@ -3,10 +3,17 @@
 .DEFAULT_GOAL := help
 
 help:
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+	@echo "Usage: make <target>"
+	@echo -e "Available targets:\n"
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)  | sort
+	@echo ""
 
-ansible: ## Run Ansible install playbook to setup Mac
+# Ansible
+bootstrap: ## Run Ansible to bootstrap tools on Mac
 	@ansible-playbook playbook/install.yml
+
+tags: ## Show all tags
+	@ansible-playbook playbook/install.yml --list-tags
 
 # Git hooks
 init-hooks: ## Init Git hooks

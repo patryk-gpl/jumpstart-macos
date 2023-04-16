@@ -1,0 +1,13 @@
+---
+
+- name: Install standard tools
+  vars:
+    formula:
+      - midnight-commander
+      - tree
+      - zsh-completions
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-standard

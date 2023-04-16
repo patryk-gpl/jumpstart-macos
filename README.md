@@ -10,6 +10,7 @@
 - [Resources, links](#resources-links)
   - [Ansible](#ansible-1)
   - [Dev Tools](#dev-tools)
+  - [Github](#github)
   - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
 # Introduction
@@ -81,11 +82,16 @@ Restart Docker:
 
 - Interpreter [discovery](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html)
 - Ansible Configuration [Settings](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings)
+- Re-using Ansible [artifacts](https://docs.ansible.com/ansible/6/user_guide/playbooks_reuse.html#playbooks-reuse)
 
 ## Dev Tools
 
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
+
+## Github
+
 - Git config [settings](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
+- Github [actions](https://docs.github.com/en/actions)
 
 ## Visual Studio Code extensions and settings
 
