@@ -2,25 +2,31 @@
 - name: Bootstrap Mac OS
   hosts: local
   tasks:
-    - community.general.homebrew:
+    - name: Make sure homebrew packages are up-to-date
+      community.general.homebrew:
         update_homebrew: true
         upgrade_all: true
       tags:
         - update-brew
 
     - name: Install tools via ASDF manager
-      import_tasks: tasks/install_asdf.yml
+      ansible.builtin.import_tasks: tasks/install_asdf.yml
       vars:
         asdf_tools:
-        - plugin: nodejs
-          version: "18.15.0"
-        - plugin: python
-          version: "3.11.3"
+          - plugin: nodejs
+            version: "18.15.0"
+          - plugin: python
+            version: "3.11.3"
       tags:
         - install-asdf
 
-    - import_tasks: tasks/install_default.yml
-    - import_tasks: tasks/install_dev_tools.yml
-    - import_tasks: tasks/install_extra.yml
-    - import_tasks: tasks/install_k8s_tools.yml
-    - import_tasks: tasks/install_microsoft.yml
+    - name: Install default tools
+      ansible.builtin.import_tasks: tasks/install_default.yml
+    - name: Installer developer tools
+      ansible.builtin.import_tasks: tasks/install_dev_tools.yml
+    - name: Install extra packages
+      ansible.builtin.import_tasks: tasks/install_extra.yml
+    - name: Install Kubernetes tools
+      ansible.builtin.import_tasks: tasks/install_k8s_tools.yml
+    - name: Install Microsoft software
+      ansible.builtin.import_tasks: tasks/install_microsoft.yml

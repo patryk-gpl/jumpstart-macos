@@ -1,5 +1,4 @@
 ---
-
 - name: Install Microsoft tools via formula
   vars:
     formula:
