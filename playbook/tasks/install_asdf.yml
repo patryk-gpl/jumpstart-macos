@@ -1,5 +1,4 @@
 ---
-
 - name: Install asdf tool via formula
   vars:
     formula:
@@ -7,15 +6,14 @@
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"
-  tags:
-    - install-dev-tools
 
 - name: Install asdf plugins
   vars:
     plugins:
       - nodejs
       - python
-  shell: >
+  ansible.builtin.shell: |
+    set -o pipefail
     bash -c '
       for plugin in {{ plugins | join(" ") }}; do
         if ! asdf plugin list | grep -qE "^$plugin"; then
@@ -23,15 +21,17 @@
         fi;
       done
     '
+  register: asdf_plugin_installed
+  changed_when: '"updating plugin" in asdf_plugin_installed.stdout'
 
 - name: Install tools managed by asdf plugins
-  command: "asdf install {{ item.plugin }} {{ item.version }}"
+  ansible.builtin.command: "asdf install {{ item.plugin }} {{ item.version }}"
   register: asdf_install_result
   changed_when: asdf_install_result.rc == 1
   loop: "{{ asdf_tools }}"
 
 - name: Set tools as global
-  command: "asdf global {{ item.plugin }} {{ item.version }}"
+  ansible.builtin.command: "asdf global {{ item.plugin }} {{ item.version }}"
   register: asdf_global_result
   changed_when: asdf_global_result.rc == 1
   loop: "{{ asdf_tools }}"

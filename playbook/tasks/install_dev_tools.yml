@@ -1,6 +1,4 @@
-
 ---
-
 - name: Install dev tools via formula
   vars:
     formula:
