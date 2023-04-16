@@ -2,11 +2,15 @@
   - [Important](#important)
 - [Tools](#tools)
   - [Initial setup](#initial-setup)
+  - [App Store](#app-store)
+  - [Custom software from the web:](#custom-software-from-the-web)
   - [Ansible](#ansible)
     - [Cheat sheet](#cheat-sheet)
-    - [Links](#links)
   - [Minikube](#minikube)
-- [Some useful links](#some-useful-links)
+- [Resources, links](#resources-links)
+  - [Ansible](#ansible-1)
+  - [Dev Tools](#dev-tools)
+  - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
 # Introduction
 
@@ -25,22 +29,27 @@ This procedure was tested on Mac OS Apply M2:
 
 ## Initial setup
 
-1. Make sure you have installed `homebrew` on your Mac. Detailed instructions to be found [here](https://brew.sh)
-2. Install required tools via `brew install ansible direnv`
-3. Make sure your Git `user` and `email` are set.
+1.  Make sure you have installed `homebrew` on your Mac. Detailed instructions to be found [here](https://brew.sh) 2. Install required tools via `brew install ansible direnv`
+2.  Install ZSH framework (in case zsh shell is used): `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+3.  Make sure your Git `user` and `email` are set.
 
         git config --global user.name FirstName LastName
         git config --global user.email email
 
-On new computer you can also set this one up:
+    On new computer you can also set this one up:
 
-    git config --global push.autoSetupRemote true
+        git config --global push.autoSetupRemote true
+        git config --global branch.autoSetupRebase always
 
-Show explanation from Git [documentation](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote):
+## App Store
 
-     push.autoSetupRemote
+To install:
 
-If set to *"true"* assume `--set-upstream` on default push when no upstream tracking exists for the current branch; this option takes effect with `push.default` options simple, upstream, and current. It is useful if by default you want new branches to be pushed to the default remote (like the behavior of `push.default=current`) and you also want the upstream tracking to be set. Workflows most likely to benefit from this option are simple central workflows where all branches are expected to have the same name on the remote.
+- Microsoft Teams
+
+## Custom software from the web:
+
+- [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 
 ## Ansible
 
@@ -49,10 +58,6 @@ If set to *"true"* assume `--set-upstream` on default push when no upstream trac
 - Get a list of Ansible installed collections
 
         ansible-galaxy collection list
-
-### Links
-- Interpreter [discovery](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html)
-- Ansible Configuration [Settings](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings)
 
 ## Minikube
 
@@ -70,6 +75,18 @@ Restart Docker:
 
 - Minikube [documentation](https://minikube.sigs.k8s.io/docs/)
 
-# Some useful links
+# Resources, links
+
+## Ansible
+
+- Interpreter [discovery](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html)
+- Ansible Configuration [Settings](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings)
+
+## Dev Tools
 
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
+- Git config [settings](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
+
+## Visual Studio Code extensions and settings
+
+- [Configuring Markdownlint Alongside Prettier](https://blog.joshuakgoldberg.com/configuring-markdownlint-alongside-prettier/)
