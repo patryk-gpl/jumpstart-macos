@@ -4,6 +4,7 @@
     formula:
       - bash
       - direnv
+      - shellcheck
       - git
   loop: "{{ formula }}"
   community.general.homebrew:
