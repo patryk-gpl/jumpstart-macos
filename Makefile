@@ -1,14 +1,14 @@
-.PHONY: help install setup
+.PHONY: help bootstrap tags init-hooks update-hooks run-hooks setup
 
 .DEFAULT_GOAL := help
 
 help:
 	@echo "Usage: make <target>"
 	@echo -e "Available targets:\n"
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)  | sort
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST) | sort
 	@echo ""
 
-# Ansible
+#Ansible
 bootstrap: ## Run Ansible to bootstrap tools on Mac
 	@ansible-playbook playbook/install.yml
 
@@ -26,4 +26,4 @@ update-hooks:
 run-hooks: ## Run pre-commit hooks on the current repository for all files
 	@poetry run pre-commit run --all-files
 
-setup: ansible init-hooks ## Setup Mac tools and install Git hooks
+setup: bootstrap init-hooks ## Setup Mac tools and install Git hooks
