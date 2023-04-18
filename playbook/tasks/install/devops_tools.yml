@@ -1,0 +1,11 @@
+---
+- name: Install Terraform tools
+  vars:
+    formula:
+      - tflint
+      - tfsec
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-devops-tools
