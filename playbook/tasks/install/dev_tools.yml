@@ -1,11 +1,25 @@
 ---
+- name: Install Git tools
+  vars:
+    formula:
+      - gh
+      - git
+      - git-filter-repo
+      - git-lfs
+      - gitup
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-dev-tools
+
 - name: Install dev tools via formula
   vars:
     formula:
       - bash
       - direnv
       - shellcheck
-      - git
+      - shfmt
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"

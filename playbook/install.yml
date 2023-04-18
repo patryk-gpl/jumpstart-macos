@@ -10,7 +10,7 @@
         - update-brew
 
     - name: Install tools via ASDF manager
-      ansible.builtin.import_tasks: tasks/install_asdf.yml
+      ansible.builtin.import_tasks: tasks/install/asdf.yml
       vars:
         asdf_tools:
           - plugin: nodejs
@@ -21,12 +21,14 @@
         - install-asdf
 
     - name: Install default tools
-      ansible.builtin.import_tasks: tasks/install_default.yml
+      ansible.builtin.import_tasks: tasks/install/default.yml
+    - name: Installer DevOps tools
+      ansible.builtin.import_tasks: tasks/install/devops_tools.yml
     - name: Installer developer tools
-      ansible.builtin.import_tasks: tasks/install_dev_tools.yml
+      ansible.builtin.import_tasks: tasks/install/dev_tools.yml
     - name: Install extra packages
-      ansible.builtin.import_tasks: tasks/install_extra.yml
+      ansible.builtin.import_tasks: tasks/install/extra.yml
     - name: Install Kubernetes tools
-      ansible.builtin.import_tasks: tasks/install_k8s_tools.yml
+      ansible.builtin.import_tasks: tasks/install/k8s_tools.yml
     - name: Install Microsoft software
-      ansible.builtin.import_tasks: tasks/install_microsoft.yml
+      ansible.builtin.import_tasks: tasks/install/microsoft.yml
