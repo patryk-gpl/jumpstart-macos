@@ -1,5 +1,8 @@
 # jumpstart-macos
 
+[![Ansible lint](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml)
+[![SonarCloud scan](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/build.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/build.yml)
+
 - [jumpstart-macos](#jumpstart-macos)
   - [Important](#important)
   - [Tools](#tools)
@@ -92,11 +95,13 @@ Restart Docker:
 ### Dev Tools
 
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
+- Custom [status badges](https://css-tricks.com/adding-custom-github-badges-to-your-repo/)
 
 ### Github
 
 - Git config [settings](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
 - Github [actions](https://docs.github.com/en/actions)
+- Github [Rest API](https://docs.github.com/en/rest/actions/workflows)
 
 ### Visual Studio Code extensions and settings
 

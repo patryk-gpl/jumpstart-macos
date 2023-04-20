@@ -1,4 +1,4 @@
-name: Playbook validation with Ansible Lint
+name: Ansible lint
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
       - feature/*
       - dependabot/*
-  pull_request:
-    branches: [main]
+    paths-ignore:
+      - "**/*.md"
 
 jobs:
   lint:
