@@ -16,6 +16,7 @@
   - [Resources, links](#resources-links)
     - [Ansible](#ansible-1)
     - [Dev Tools](#dev-tools)
+    - [Sonar](#sonar)
     - [Github](#github)
     - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
@@ -97,11 +98,16 @@ Restart Docker:
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
 - Custom [status badges](https://css-tricks.com/adding-custom-github-badges-to-your-repo/)
 
+### Sonar
+
+- SonarCloud [docs](https://docs.sonarcloud.io/)
+
 ### Github
 
 - Git config [settings](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
 - Github [actions](https://docs.github.com/en/actions)
 - Github [Rest API](https://docs.github.com/en/rest/actions/workflows)
+- Github [blog](https://github.blog/)
 
 ### Visual Studio Code extensions and settings
 

@@ -1,0 +1,11 @@
+---
+- name: Install gems
+  gem:
+    name: "{{ item }}"
+    state: present
+    user_install: yes
+  with_items:
+    - bashcov
+    - mdl
+  tags:
+    - install-ruby

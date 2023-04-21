@@ -17,8 +17,13 @@
             version: "18.15.0"
           - plugin: python
             version: "3.11.3"
+          - plugin: ruby
+            version: "3.2.2"
       tags:
         - install-asdf
+
+    - name: Install Ruby tools
+      ansible.builtin.import_tasks: tasks/install/ruby.yml
 
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
