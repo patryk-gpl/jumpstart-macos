@@ -1,4 +1,4 @@
-name: Ansible lint
+name: Ansible validation
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - "**/*.md"
 
 jobs:
-  lint:
+  ansible-lint:
     name: Lint Ansible playbooks
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +23,14 @@ jobs:
         run: ansible --version
 
       - name: Run ansible-lint
-        uses: ansible/ansible-lint-action@v6.14.4
+        uses: ansible/ansible-lint-action@v6.15.0
         with:
-          path: "playbook/"
+          path: "playbook"
+
+  sonar:
+    name: Run SonarCloudu analysis
+    uses: kpatryk/workflows/.github/workflows/sonar.yml@v0.1.0
+    with:
+      os: ubuntu-latest
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
