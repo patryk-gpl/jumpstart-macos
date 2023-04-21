@@ -12,6 +12,7 @@
     plugins:
       - nodejs
       - python
+      - ruby
   ansible.builtin.shell: |
     set -o pipefail
     bash -c '
