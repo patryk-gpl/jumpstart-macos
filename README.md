@@ -1,6 +1,6 @@
 # jumpstart-macos
 
-[![Ansible lint](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml)
+[![Ansible validation](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/validation.yml)
 [![SonarCloud scan](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/build.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/build.yml)
 
 - [jumpstart-macos](#jumpstart-macos)

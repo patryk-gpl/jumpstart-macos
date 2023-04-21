@@ -3,7 +3,7 @@
   gem:
     name: "{{ item }}"
     state: present
-    user_install: yes
+    user_install: true
   with_items:
     - bashcov
     - mdl
