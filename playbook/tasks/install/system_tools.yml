@@ -1,0 +1,11 @@
+---
+- name: Install system tools
+  vars:
+    formula:
+      - htop
+      - nmap
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-standard
