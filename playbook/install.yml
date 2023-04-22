@@ -24,6 +24,8 @@
 
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
+    - name: Install system tools
+      ansible.builtin.import_tasks: tasks/install/system_tools.yml
     - name: Installer DevOps tools
       ansible.builtin.import_tasks: tasks/install/devops_tools.yml
     - name: Installer developer tools
