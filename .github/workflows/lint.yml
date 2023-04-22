@@ -1,6 +1,7 @@
-name: Ansible validation
+name: Ansible lint
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -26,11 +27,3 @@ jobs:
         uses: ansible/ansible-lint-action@v6.15.0
         with:
           path: "playbook"
-
-  sonar:
-    name: Run SonarCloudu analysis
-    uses: kpatryk/workflows/.github/workflows/sonar.yml@v0.1.0
-    with:
-      os: ubuntu-latest
-    secrets:
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
