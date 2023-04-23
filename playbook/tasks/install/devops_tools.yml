@@ -4,6 +4,7 @@
     formula:
       - tflint
       - tfsec
+      - warrensbox/tap/tfswitch
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"

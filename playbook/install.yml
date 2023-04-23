@@ -22,9 +22,6 @@
       tags:
         - install-asdf
 
-    - name: Install Ruby tools
-      ansible.builtin.import_tasks: tasks/install/ruby.yml
-
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
     - name: Installer DevOps tools
@@ -37,3 +34,5 @@
       ansible.builtin.import_tasks: tasks/install/k8s_tools.yml
     - name: Install Microsoft software
       ansible.builtin.import_tasks: tasks/install/microsoft.yml
+    - name: Install Ruby tools
+      ansible.builtin.import_tasks: tasks/install/ruby.yml
