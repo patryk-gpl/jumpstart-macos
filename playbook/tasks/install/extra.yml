@@ -1,4 +1,14 @@
 ---
+- name: Install extra tools via formula
+  vars:
+    formula:
+      - gnuplot
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-extra-tools
+
 - name: Install extra tools via cask
   vars:
     cask:
