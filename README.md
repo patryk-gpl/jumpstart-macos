@@ -16,7 +16,9 @@
   - [Resources, links](#resources-links)
     - [Ansible](#ansible-1)
     - [Dev Tools](#dev-tools)
+    - [Kubernetes and K8S tools](#kubernetes-and-k8s-tools)
     - [Sonar](#sonar)
+    - [Terraform and tools](#terraform-and-tools)
     - [Github](#github)
     - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
@@ -98,9 +100,17 @@ Restart Docker:
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
 - Custom [status badges](https://css-tricks.com/adding-custom-github-badges-to-your-repo/)
 
+### Kubernetes and K8S tools
+
+- Getting started with [Flux v2](https://fluxcd.io/flux/get-started/)
+
 ### Sonar
 
 - SonarCloud [docs](https://docs.sonarcloud.io/)
+
+### Terraform and tools
+
+- [tfswitch](https://tfswitch.warrensbox.com/Install/) command line tool lets you switch between different versions of terraform
 
 ### Github
 

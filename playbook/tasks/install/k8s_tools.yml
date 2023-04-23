@@ -2,12 +2,21 @@
 - name: Install K8S tools
   vars:
     formula:
-      - fluxctl
+      - fluxcd/tap/flux
+      - helm
       - istioctl
+      - k9s
       - kubectx
       - minikube
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"
+  tags:
+    - install-k8s-tools
+
+- name: Install kube-shell via pip
+  ansible.builtin.pip:
+    name: kube-shell
+    state: present
   tags:
     - install-k8s-tools
