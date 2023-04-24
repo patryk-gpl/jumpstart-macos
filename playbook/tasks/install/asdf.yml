@@ -1,11 +1,20 @@
 ---
-- name: Install asdf tool via formula
+- name: Install asdf dependencies via formula
   vars:
     formula:
-      - asdf
+      - openssl
+      - readline
+      - sqlite3
+      - xz
+      - zlib
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"
+
+- name: Install asdf tool
+  community.general.homebrew:
+    name: "asdf"
+    state: present
 
 - name: Install asdf plugins
   vars:
@@ -36,3 +45,7 @@
   register: asdf_global_result
   changed_when: asdf_global_result.rc == 1
   loop: "{{ asdf_tools }}"
+
+- name: Update asdf plugins
+  ansible.builtin.command: "asdf plugin update --all"
+  changed_when: false

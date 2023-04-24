@@ -1,0 +1,10 @@
+---
+- name: Install Java (openJDK)
+  vars:
+    formula:
+      - openjdk
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-java
