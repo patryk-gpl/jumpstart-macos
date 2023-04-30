@@ -19,6 +19,7 @@
     formula:
       - bash
       - direnv
+      - jq
       - shellcheck
       - shfmt
   loop: "{{ formula }}"
