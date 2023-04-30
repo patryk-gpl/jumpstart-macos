@@ -34,6 +34,8 @@
       ansible.builtin.import_tasks: tasks/install/devops_tools.yml
     - name: Installer developer tools
       ansible.builtin.import_tasks: tasks/install/dev_tools.yml
+    - name: Install productivity tools
+      ansible.builtin.import_tasks: tasks/install/productivity.yml
     - name: Install extra packages
       ansible.builtin.import_tasks: tasks/install/extra.yml
     - name: Install Kubernetes tools
