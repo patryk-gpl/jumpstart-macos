@@ -13,6 +13,8 @@
   vars:
     cask:
       - calibre
+      - google-drive
+      - xnviewmp
   loop: "{{ cask }}"
   community.general.homebrew_cask:
     name: "{{ item }}"
