@@ -13,8 +13,10 @@
   vars:
     cask:
       - calibre
+      - ffmpeg
       - google-drive
       - xnviewmp
+      - youtube-dl
   loop: "{{ cask }}"
   community.general.homebrew_cask:
     name: "{{ item }}"
