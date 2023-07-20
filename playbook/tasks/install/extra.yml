@@ -2,7 +2,9 @@
 - name: Install extra tools via formula
   vars:
     formula:
+      - ffmpeg
       - gnuplot
+      - youtube-dl
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"
@@ -13,10 +15,9 @@
   vars:
     cask:
       - calibre
-      - ffmpeg
       - google-drive
+      - google-chrome
       - xnviewmp
-      - youtube-dl
   loop: "{{ cask }}"
   community.general.homebrew_cask:
     name: "{{ item }}"
