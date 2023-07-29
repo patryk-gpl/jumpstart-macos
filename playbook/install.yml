@@ -26,6 +26,8 @@
 
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
+    - name: Install office tools
+      ansible.builtin.import_tasks: tasks/install/office.yml
     - name: Install Java (openJDK)
       ansible.builtin.import_tasks: tasks/install/java.yml
     - name: Install system tools

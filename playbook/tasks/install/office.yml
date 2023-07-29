@@ -1,0 +1,10 @@
+---
+- name: Install office tools
+  vars:
+    cask:
+      - libreoffice
+  loop: "{{ cask }}"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  tags:
+    - install-office
