@@ -8,4 +8,31 @@
   community.general.homebrew:
     name: "{{ item }}"
   tags:
-    - install-standard
+    - install-system-tools
+
+- name: Install drive monitoring utilities
+  vars:
+    formula:
+      - e2fsprogs
+      - smartmontools
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-system-tools
+# TODO: Fix below code to work with asdf and reshim
+# - name: Get the path for badblocks
+#   ansible.builtin.command: "brew --prefix e2fsprogs"
+#   register: brew_path
+#   tags:
+#     - install-system-tools
+
+# - name: Create symlink for badblocks
+#   ansible.builtin.file:
+#     src: "{{ brew_path.stdout }}/sbin/badblocks"
+#     dest: /usr/local/bin/badblocks
+#     state: link
+#   become: true
+#   become_user: root
+#   tags:
+#     - install-system-tools
