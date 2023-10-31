@@ -1,0 +1,2 @@
+.gitattributes !filter !diff
+*.lit filter=git-crypt diff=git-crypt

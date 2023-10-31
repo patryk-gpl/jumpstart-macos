@@ -15,6 +15,10 @@ bootstrap: ## Run Ansible to bootstrap tools on Mac
 tags: ## Show all tags
 	@ansible-playbook playbook/install.yml --list-tags
 
+# Git-crypt
+status: ## Show status of encrypted files
+	@git-crypt status -e
+
 # Git hooks
 init-hooks: ## Init Git hooks
 	@poetry install
