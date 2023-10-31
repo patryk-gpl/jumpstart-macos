@@ -46,3 +46,5 @@
       ansible.builtin.import_tasks: tasks/install/microsoft.yml
     - name: Install Ruby tools
       ansible.builtin.import_tasks: tasks/install/ruby.yml
+    - name: Install virtualization software
+      ansible.builtin.import_tasks: tasks/install/vagrant.yml
