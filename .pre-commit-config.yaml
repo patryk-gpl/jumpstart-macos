@@ -14,6 +14,13 @@ repos:
           - prettier
           - prettier-plugin-toml
 
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: forbid-binary
+      - id: script-must-have-extension
+      - id: shellcheck
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
