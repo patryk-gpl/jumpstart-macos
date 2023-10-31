@@ -1,0 +1,26 @@
+---
+- name: Install Vagrant
+  vars:
+    formula:
+      - vagrant
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  register: homebrew_output
+  failed_when: "'Warning: Not upgrading vagrant, the latest version is already installed' not in homebrew_output.msg"
+  tags:
+    - install-virtualization
+
+- name: Display Homebrew Output
+  ansible.builtin.debug:
+    var: homebrew_output
+
+- name: Install VMWare-Fusion
+  vars:
+    cask:
+      - vmware-fusion
+  loop: "{{ cask }}"
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  tags:
+    - install-virtualization
