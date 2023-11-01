@@ -1,0 +1,10 @@
+---
+- name: Install Mac ported software
+  vars:
+    formula:
+      - iproute2mac
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-mac-ported
