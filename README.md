@@ -3,24 +3,23 @@
 [![Ansible lint](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/lint.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/lint.yml)
 [![SonarCloud analysis](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/sonar.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/sonar.yml)
 
-- [jumpstart-macos](#jumpstart-macos)
-  - [Important](#important)
-  - [Tools](#tools)
-    - [Initial setup](#initial-setup)
-    - [App Store](#app-store)
-    - [Custom software from web](#custom-software-from-web)
-    - [Ansible](#ansible)
-      - [Cheat sheet](#cheat-sheet)
-    - [Minikube](#minikube)
-  - [Known issues](#known-issues)
-  - [Resources, links](#resources-links)
-    - [Ansible](#ansible-1)
-    - [Dev Tools](#dev-tools)
-    - [Kubernetes and K8S tools](#kubernetes-and-k8s-tools)
-    - [Sonar](#sonar)
-    - [Terraform and tools](#terraform-and-tools)
-    - [Github](#github)
-    - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
+- [Important](#important)
+- [Tools](#tools)
+  - [Initial setup](#initial-setup)
+  - [App Store](#app-store)
+  - [Custom software from web](#custom-software-from-web)
+  - [Ansible](#ansible)
+    - [Cheat sheet](#cheat-sheet)
+  - [Minikube](#minikube)
+- [Known issues](#known-issues)
+- [Resources, links](#resources-links)
+  - [Ansible](#ansible-1)
+  - [Dev Tools](#dev-tools)
+  - [Kubernetes and K8S tools](#kubernetes-and-k8s-tools)
+  - [Sonar](#sonar)
+  - [Terraform and tools](#terraform-and-tools)
+  - [Github](#github)
+  - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
 This repository contain an automated procedure to jump-start installation and configuration of Mac OS.
 The procedure assume Ansible is going to be used to keep configuration in sync.
@@ -58,6 +57,8 @@ To install:
 ### Custom software from web
 
 - [Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
+- [NTFS on Mac](https://github.com/osxfuse/osxfuse/wiki/NTFS-3G)
+- [Enabling NTFS write in macOS the Open source way](https://medium.com/macoclock/enabling-ntfs-write-in-macos-10-15-catalina-the-open-source-way-a5fd0d1cb32e)
 
 ### Ansible
 
