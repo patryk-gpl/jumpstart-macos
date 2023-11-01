@@ -24,6 +24,8 @@
       tags:
         - install-asdf
 
+    - name: Install Mac-ported software
+      ansible.builtin.import_tasks: tasks/install/mac_ported.yml
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
     - name: Install office tools
