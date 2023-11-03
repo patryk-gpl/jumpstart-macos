@@ -2,7 +2,9 @@
 - name: Install standard tools
   vars:
     formula:
+      - fdupes # remove file duplicates
       - midnight-commander
+      - rsync
       - tree
       - zsh-completions
   loop: "{{ formula }}"
