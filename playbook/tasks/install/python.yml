@@ -1,0 +1,15 @@
+---
+- name: Install pipx via pip
+  pip:
+    name: pipx
+
+- name: Check if pipx package is installed
+  command: pipx list
+  register: pipx_list
+  changed_when: False
+
+- name: Install "{{ item }}" package
+  command: pipx install "{{ item }}"
+  loop:
+    - shell-genie # AI tool to generate CLI commands
+  when: item not in pipx_list.stdout

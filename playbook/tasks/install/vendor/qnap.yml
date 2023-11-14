@@ -1,0 +1,7 @@
+---
+- name: Install QNAP software
+  community.general.homebrew_cask:
+    name: qfinder-pro
+    state: latest
+  tags:
+    - install-qnap
