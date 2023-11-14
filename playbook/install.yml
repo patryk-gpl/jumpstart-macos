@@ -26,6 +26,11 @@
 
     - name: Install Mac-ported software
       ansible.builtin.import_tasks: tasks/install/mac_ported.yml
+    - name: Install Python tools
+      ansible.builtin.import_tasks: tasks/install/python.yml
+      tags:
+        - install-python-tools
+
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
     - name: Install office tools
@@ -44,9 +49,12 @@
       ansible.builtin.import_tasks: tasks/install/extra.yml
     - name: Install Kubernetes tools
       ansible.builtin.import_tasks: tasks/install/k8s_tools.yml
-    - name: Install Microsoft software
-      ansible.builtin.import_tasks: tasks/install/microsoft.yml
     - name: Install Ruby tools
       ansible.builtin.import_tasks: tasks/install/ruby.yml
     - name: Install virtualization software
       ansible.builtin.import_tasks: tasks/install/vagrant.yml
+
+    - name: Install Microsoft software
+      ansible.builtin.import_tasks: tasks/install/vendor/microsoft.yml
+    - name: Install Qnap software
+      ansible.builtin.import_tasks: tasks/install/vendor/qnap.yml
