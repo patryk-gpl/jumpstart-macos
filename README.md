@@ -3,23 +3,25 @@
 [![Ansible lint](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/lint.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/lint.yml)
 [![SonarCloud analysis](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/sonar.yml/badge.svg)](https://github.com/patryk-gpl/jumpstart-macos/actions/workflows/sonar.yml)
 
-- [Important](#important)
-- [Tools](#tools)
-  - [Initial setup](#initial-setup)
-  - [App Store](#app-store)
-  - [Custom software from web](#custom-software-from-web)
-  - [Ansible](#ansible)
-    - [Cheat sheet](#cheat-sheet)
-  - [Minikube](#minikube)
-- [Known issues](#known-issues)
-- [Resources, links](#resources-links)
-  - [Ansible](#ansible-1)
-  - [Dev Tools](#dev-tools)
-  - [Kubernetes and K8S tools](#kubernetes-and-k8s-tools)
-  - [Sonar](#sonar)
-  - [Terraform and tools](#terraform-and-tools)
-  - [Github](#github)
-  - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
+- [jumpstart-macos](#jumpstart-macos)
+  - [Important](#important)
+  - [Tools](#tools)
+    - [Initial setup](#initial-setup)
+    - [App Store](#app-store)
+    - [Custom software from web](#custom-software-from-web)
+    - [Ansible](#ansible)
+      - [Cheat sheet](#cheat-sheet)
+    - [Minikube](#minikube)
+  - [Known issues](#known-issues)
+  - [Resources, links](#resources-links)
+    - [Security](#security)
+    - [Ansible](#ansible-1)
+    - [Dev Tools](#dev-tools)
+    - [Kubernetes](#kubernetes)
+    - [Sonar](#sonar)
+    - [Terraform](#terraform)
+    - [Github](#github)
+    - [Visual Studio Code extensions and settings](#visual-studio-code-extensions-and-settings)
 
 This repository contain an automated procedure to jump-start installation and configuration of Mac OS.
 The procedure assume Ansible is going to be used to keep configuration in sync.
@@ -50,7 +52,7 @@ This procedure was tested on Mac OS Apple Silicon M2:
 
 ### App Store
 
-To install:
+To install from App Store:
 
 - Microsoft Teams
 
@@ -90,6 +92,10 @@ Restart Docker:
 
 ## Resources, links
 
+### Security
+
+- [How to disable SMB 1 or NetBIOS in macOS](https://support.apple.com/en-us/102050)
+
 ### Ansible
 
 - Interpreter [discovery](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html)
@@ -101,7 +107,7 @@ Restart Docker:
 - 5 Ways to Manage Environment Variables with [direnv](https://www.sixfeetup.com/blog/direnv-manage-environment-variables)
 - Custom [status badges](https://css-tricks.com/adding-custom-github-badges-to-your-repo/)
 
-### Kubernetes and K8S tools
+### Kubernetes
 
 - Getting started with [Flux v2](https://fluxcd.io/flux/get-started/)
 
@@ -109,7 +115,7 @@ Restart Docker:
 
 - SonarCloud [docs](https://docs.sonarcloud.io/)
 
-### Terraform and tools
+### Terraform
 
 - [tfswitch](https://tfswitch.warrensbox.com/Install/) command line tool lets you switch between different versions of terraform
 
