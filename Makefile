@@ -13,7 +13,7 @@ bootstrap: ## Run Ansible to bootstrap tools on Mac
 	@ansible-playbook playbook/install.yml
 
 tags: ## Show all tags
-	@ansible-playbook playbook/install.yml --list-tags
+	@ansible-playbook playbook/install.yml --list-tags | grep 'TASK TAGS' | sed 's/TASK TAGS: //' | tr -d '[]' | tr ',' '\n' | tr -d ' ' | sort
 
 # Git hooks
 init-hooks: ## Init Git hooks
