@@ -14,9 +14,9 @@
       vars:
         asdf_tools:
           - plugin: nodejs
-            version: "18.15.0"
+            version: "21.2.0"
           - plugin: python
-            version: "3.11.3"
+            version: "3.11.6"
           - plugin: ruby
             version: "3.2.2"
           # - plugin: jx  # current plugin does not support Apple Silicon
@@ -31,6 +31,8 @@
       tags:
         - install-python-tools
 
+    - name: Install network tools
+      ansible.builtin.import_tasks: tasks/install/network_tools.yml
     - name: Install default tools
       ansible.builtin.import_tasks: tasks/install/default.yml
     - name: Install office tools

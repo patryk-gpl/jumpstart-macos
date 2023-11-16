@@ -1,0 +1,10 @@
+---
+- name: Install network tools
+  vars:
+    formula:
+      - mtr
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-network-tools
