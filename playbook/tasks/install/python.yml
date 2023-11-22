@@ -1,15 +1,25 @@
 ---
-- name: Install pipx via pip
-  pip:
-    name: pipx
-
-- name: Check if pipx package is installed
-  command: pipx list
-  register: pipx_list
+- name: Get Python interpreter path
+  ansible.builtin.command: asdf which python
+  register: python_path
   changed_when: False
 
+- name: Check if pipx package is installed
+  ansible.builtin.command: pipx list
+  register: pipx_list
+  changed_when: False
+  failed_when: False
+
+- name: Install pipx
+  ansible.builtin.command: "{{ python_path.stdout }} -m pip install --upgrade pipx"
+  when: "'pipx' not in pipx_list.stdout"
+
 - name: Install "{{ item }}" package
-  command: pipx install "{{ item }}"
-  loop:
-    - shell-genie # AI tool to generate CLI commands
+  ansible.builtin.command: pipx install "{{ item }}"
   when: item not in pipx_list.stdout
+  loop:
+    - cookiecutter # CLI tool to create projects from templates
+    - git-up # CLI tool to update git branches
+    - pre-commit # Git pre-commit hooks
+    - shell-genie # AI tool to generate CLI commands
+    - virtualenv # Python virtual environment manager
