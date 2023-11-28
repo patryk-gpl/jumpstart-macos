@@ -4,6 +4,7 @@
     formula:
       - gh # GitHub command-line tool
       - git
+      - git-delta # Syntax-highlighting pager for git and diff output
       - git-filter-repo # Quickly rewrite git repository history
       - git-lfs
       - gitup # Update multiple git repositories at once
