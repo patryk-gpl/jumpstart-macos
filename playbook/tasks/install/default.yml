@@ -6,9 +6,24 @@
       - midnight-commander
       - rsync
       - tree
-      - zsh-completions
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"
   tags:
     - install-standard
+
+- name: Install ZSH and extensions
+  vars:
+    formula:
+      - zsh
+      - zsh-autocomplete
+      - zsh-autosuggestions
+      - zsh-completions
+      - zsh-history-substring-search
+      - zsh-syntax-highlighting
+  loop: "{{ formula }}"
+  community.general.homebrew:
+    name: "{{ item }}"
+  tags:
+    - install-standard
+    - install-zsh
