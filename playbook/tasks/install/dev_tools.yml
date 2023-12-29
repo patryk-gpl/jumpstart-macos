@@ -3,10 +3,10 @@
   vars:
     formula:
       - gh # GitHub command-line tool
-      - git
+      - git # Version control system
       - git-delta # Syntax-highlighting pager for git and diff output
       - git-filter-repo # Quickly rewrite git repository history
-      - git-lfs
+      - git-lfs # Large file storage for Git
       - gitup # Update multiple git repositories at once
       - libgit2 # C library of Git core methods that is re-entrant and linkable
   loop: "{{ formula }}"
@@ -18,12 +18,21 @@
 - name: Install dev tools via formula
   vars:
     formula:
-      - bash
+      - bash # Bourne-Again SHell, a UNIX command interpreter
+      - bash-completion # Programmable completion for Bash
+      - bat # cat clone with syntax highlighting and Git integration
       - cloc # Statistics utility to count lines of code
       - direnv # Load/unload environment variables based on $PWD
+      - eza # Modern replacement for ls (fork of exa)
+      - fzf # Command-line fuzzy finder
       - jq # Lightweight and flexible command-line JSON processor
+      - lsd # Modern replacement for ls
+      - ripgrep # Search tool for git, hg, and svn repositories
       - shellcheck # Static analysis and lint tool, for (ba)sh scripts
       - shfmt # Autoformat shell script source code
+      - yq # YAML processor
+      - thefuck # Magnificent app which corrects your previous console command
+      - zoxide # A faster way to navigate your filesystem
   loop: "{{ formula }}"
   community.general.homebrew:
     name: "{{ item }}"

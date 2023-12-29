@@ -4,7 +4,6 @@
     formula:
       - fluxcd/tap/flux
       - helm
-      - istioctl
       - k9s
       - kubectx
       - minikube
