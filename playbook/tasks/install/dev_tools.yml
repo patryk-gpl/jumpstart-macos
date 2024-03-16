@@ -32,6 +32,7 @@
       - shfmt # Autoformat shell script source code
       - yq # YAML processor
       - thefuck # Magnificent app which corrects your previous console command
+      - universal-ctags
       - zoxide # A faster way to navigate your filesystem
   loop: "{{ formula }}"
   community.general.homebrew:
